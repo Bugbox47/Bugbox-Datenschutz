@@ -1,30 +1,83 @@
+/* Grundlegendes Styling */
 body {
-    font-family: Arial, sans-serif;
-    margin: 20px;
+    font-family: "Segoe UI", Roboto, Arial, sans-serif;
+    margin: 0;
     padding: 0;
-    background-color: #f4f4f4;
+    background-color: #f9fafb;
+    color: #333;
+    line-height: 1.6;
 }
 
+/* Kopfbereich */
 header {
-    background: #333;
+    background: #2c3e50;
     color: white;
     text-align: center;
-    padding: 15px;
+    padding: 30px 15px;
 }
 
+header h1 {
+    margin: 0;
+    font-size: 2rem;
+}
+
+/* Hauptinhalt */
 main {
-    max-width: 800px;
-    margin: auto;
-    padding: 20px;
+    max-width: 900px;
+    margin: 30px auto;
+    padding: 25px;
     background: white;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
 }
 
+section {
+    margin-bottom: 35px;
+}
+
+h2 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+    color: #1a1a1a;
+}
+
+p {
+    margin-bottom: 15px;
+}
+
+ul {
+    margin: 10px 0 20px 25px;
+    list-style-type: disc;
+}
+
+/* Links */
+a {
+    color: #0077cc;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* Footer */
 footer {
     text-align: center;
-    padding: 10px;
-    background: #333;
+    padding: 15px;
+    background: #2c3e50;
     color: white;
-    margin-top: 20px;
+    font-size: 0.9rem;
+    margin-top: 40px;
+}
+
+/* Responsives Design */
+@media (max-width: 600px) {
+    main {
+        margin: 15px;
+        padding: 20px;
+    }
+
+    h2 {
+        font-size: 1.3rem;
+    }
 }
