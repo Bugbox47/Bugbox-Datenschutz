@@ -1,4 +1,3 @@
-/* Grundlegendes Styling */
 body {
     font-family: "Segoe UI", Roboto, Arial, sans-serif;
     margin: 0;
@@ -8,7 +7,6 @@ body {
     line-height: 1.6;
 }
 
-/* Kopfbereich */
 header {
     background: #2c3e50;
     color: white;
@@ -21,7 +19,6 @@ header h1 {
     font-size: 2rem;
 }
 
-/* Hauptinhalt */
 main {
     max-width: 900px;
     margin: 30px auto;
@@ -41,16 +38,10 @@ h2 {
     color: #1a1a1a;
 }
 
-p {
-    margin-bottom: 15px;
-}
-
 ul {
-    margin: 10px 0 20px 25px;
-    list-style-type: disc;
+    margin-left: 20px;
 }
 
-/* Links */
 a {
     color: #0077cc;
     text-decoration: none;
@@ -60,7 +51,6 @@ a:hover {
     text-decoration: underline;
 }
 
-/* Footer */
 footer {
     text-align: center;
     padding: 15px;
@@ -70,14 +60,9 @@ footer {
     margin-top: 40px;
 }
 
-/* Responsives Design */
 @media (max-width: 600px) {
     main {
         margin: 15px;
         padding: 20px;
-    }
-
-    h2 {
-        font-size: 1.3rem;
     }
 }
