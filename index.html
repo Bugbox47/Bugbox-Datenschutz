@@ -6,33 +6,109 @@
   <title>Privacy Policy – Bugbox</title>
 
   <style>
+    :root {
+      --bg: #0f172a;
+      --card: #111827;
+      --header: #020617;
+      --text: #f8fafc;
+      --muted: #cbd5e1;
+      --accent: #34d399;
+      --accent2: #38bdf8;
+      --border: rgba(255,255,255,0.10);
+    }
+
     body {
-      font-family: Arial, Helvetica, sans-serif;
-      background-color: #0f172a;
-      color: #f5f5f5;
       margin: 0;
-      padding: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      background: var(--bg);
+      color: var(--text);
       line-height: 1.6;
     }
 
-    header, footer {
-      background-color: #020617;
-      padding: 20px;
+    header {
+      background: var(--header);
       text-align: center;
+      padding: 34px 18px 26px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .logo {
+      width: 130px;
+      height: 130px;
+      object-fit: contain;
+      border-radius: 28px;
+      margin-bottom: 16px;
+      box-shadow: 0 12px 30px rgba(0,0,0,0.35);
+    }
+
+    h1 {
+      margin: 0;
+      font-size: 2rem;
+      color: var(--accent);
+    }
+
+    .subtitle {
+      color: var(--muted);
+      margin-top: 8px;
+      font-size: 0.95rem;
+    }
+
+    .language-switch {
+      margin-top: 22px;
+    }
+
+    .language-switch button {
+      cursor: pointer;
+      border: 1px solid var(--accent);
+      background: transparent;
+      color: var(--accent);
+      padding: 10px 18px;
+      margin: 5px;
+      border-radius: 999px;
+      font-weight: bold;
+      font-size: 0.95rem;
+    }
+
+    .language-switch button.active,
+    .language-switch button:hover {
+      background: var(--accent);
+      color: #020617;
     }
 
     main {
-      max-width: 900px;
-      margin: auto;
-      padding: 24px;
+      max-width: 920px;
+      margin: 28px auto;
+      padding: 0 18px 34px;
     }
 
-    h1, h2 {
-      color: #38bdf8;
+    .content {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 22px;
+      padding: 24px;
+      box-shadow: 0 12px 30px rgba(0,0,0,0.22);
+    }
+
+    section {
+      margin-bottom: 30px;
+    }
+
+    h2 {
+      color: var(--accent2);
+      margin-bottom: 10px;
+      font-size: 1.35rem;
+    }
+
+    p, li {
+      color: var(--muted);
+    }
+
+    strong {
+      color: var(--text);
     }
 
     a {
-      color: #38bdf8;
+      color: var(--accent2);
       text-decoration: none;
     }
 
@@ -40,34 +116,45 @@
       text-decoration: underline;
     }
 
-    section {
-      margin-bottom: 32px;
-    }
-
     ul {
       margin-left: 20px;
-    }
-
-    .lang-switch {
-      text-align: center;
-      margin: 20px 0 35px;
-    }
-
-    .lang-switch a {
-      display: inline-block;
-      margin: 6px;
-      padding: 8px 14px;
-      border: 1px solid #38bdf8;
-      border-radius: 999px;
-      color: #38bdf8;
+      padding-left: 10px;
     }
 
     .notice {
-      background: rgba(56, 189, 248, 0.08);
-      border: 1px solid rgba(56, 189, 248, 0.3);
+      background: rgba(52, 211, 153, 0.08);
+      border: 1px solid rgba(52, 211, 153, 0.25);
       border-radius: 14px;
       padding: 14px;
+      color: var(--muted);
       margin-bottom: 28px;
+    }
+
+    footer {
+      background: var(--header);
+      text-align: center;
+      padding: 18px;
+      color: var(--muted);
+      border-top: 1px solid var(--border);
+    }
+
+    .hidden {
+      display: none;
+    }
+
+    @media (max-width: 600px) {
+      .logo {
+        width: 105px;
+        height: 105px;
+      }
+
+      h1 {
+        font-size: 1.65rem;
+      }
+
+      .content {
+        padding: 18px;
+      }
     }
   </style>
 </head>
@@ -75,316 +162,366 @@
 <body>
 
 <header>
-  <h1>Bugbox Privacy Policy</h1>
+  <img src="logo.png" alt="Bugbox Logo" class="logo" />
+  <h1 id="pageTitle">Privacy Policy</h1>
+  <p class="subtitle">Bugbox – Insect and invertebrate marketplace</p>
+
+  <div class="language-switch">
+    <button id="btnEn" class="active" onclick="showLanguage('en')">🇬🇧 English</button>
+    <button id="btnDe" onclick="showLanguage('de')">🇩🇪 Deutsch</button>
+  </div>
 </header>
 
 <main>
 
-<div class="lang-switch">
-  <a href="#english">English</a>
-  <a href="#deutsch">Deutsch</a>
+<div id="en" class="content">
+
+  <section>
+    <p>
+      This Privacy Policy explains how personal data is collected, processed and used within the
+      <strong>Bugbox</strong> app.
+    </p>
+
+    <div class="notice">
+      In case of discrepancies, inconsistencies or translation errors, the English version shall prevail and be legally binding.
+    </div>
+  </section>
+
+  <section>
+    <h2>1. Data Controller</h2>
+    <p>
+      The data controller responsible for the processing of personal data is:<br><br>
+      <strong>Nils Illbruck</strong><br>
+      Operator of Bugbox<br>
+      Email: <a href="mailto:slin.bugbox@gmail.com">slin.bugbox@gmail.com</a>
+    </p>
+    <p>
+      This Privacy Policy applies worldwide, including users located in the European Union,
+      the United Kingdom, the United States of America and Canada.
+    </p>
+    <p>
+      Depending on applicable law, users may have additional rights under local data protection laws,
+      including but not limited to the GDPR, UK GDPR, CCPA/CPRA and PIPEDA.
+    </p>
+  </section>
+
+  <section>
+    <h2>2. Data Collected</h2>
+    <p>The app may collect and store the following personal data:</p>
+    <ul>
+      <li>Email address</li>
+      <li>Username</li>
+      <li>Profile picture, if uploaded by the user</li>
+      <li>User-created listings, messages and profile information</li>
+    </ul>
+    <p>
+      In addition, technical information such as device information, crash reports or usage data may be
+      collected automatically by third-party services such as Google AdMob and Google Firebase.
+    </p>
+  </section>
+
+  <section>
+    <h2>3. Purpose of Processing</h2>
+    <ul>
+      <li>User registration, login and account management</li>
+      <li>Displaying user profiles, listings and user-generated content</li>
+      <li>Providing chat, support and technical services</li>
+      <li>Improving the stability, security and functionality of the app</li>
+    </ul>
+    <p>
+      Bugbox does not sell personal data, does not send newsletters and does not use collected personal data
+      for its own advertising purposes.
+    </p>
+  </section>
+
+  <section>
+    <h2>4. Advertising with Google AdMob</h2>
+    <p>
+      This app uses Google AdMob to display advertisements. Depending on user consent and applicable legal
+      requirements, personalized or non-personalized ads may be shown.
+    </p>
+    <p>
+      Google may collect technical information such as device identifiers, IP address and usage data to provide
+      and improve advertising services.
+    </p>
+    <p>
+      More information:
+      <a href="https://policies.google.com/technologies/partner-sites" target="_blank">
+        https://policies.google.com/technologies/partner-sites
+      </a>
+    </p>
+  </section>
+
+  <section>
+    <h2>5. Use of Google Firebase</h2>
+    <p>
+      This app uses Google Firebase services, including Authentication, Firestore, Firebase Storage and Crashlytics.
+      Technical data such as crash reports or device diagnostics may be collected to improve app stability and security.
+    </p>
+    <p>
+      More information:
+      <a href="https://firebase.google.com/support/privacy" target="_blank">
+        https://firebase.google.com/support/privacy
+      </a>
+    </p>
+  </section>
+
+  <section>
+    <h2>6. Marketplace Function</h2>
+    <p>
+      Bugbox provides only a technical platform that allows users to create listings, view offers and communicate
+      with each other.
+    </p>
+    <p>
+      Bugbox is not a seller, buyer, broker, agent or contractual party in transactions between users.
+    </p>
+    <p>
+      Users are solely responsible for ensuring that their listings and transactions comply with all applicable
+      laws, including wildlife protection, animal welfare, import, export and customs regulations.
+    </p>
+  </section>
+
+  <section>
+    <h2>7. Third-Party Advertising and Services</h2>
+    <p>
+      The app uses third-party advertising services, in particular Google AdMob, to display advertising content.
+      Bugbox has no control over the content, design or destination pages of third-party advertisements.
+    </p>
+    <p>
+      Bugbox assumes no responsibility or liability for content, products or services offered through advertisements
+      or external links provided by third parties.
+    </p>
+  </section>
+
+  <section>
+    <h2>8. Data Sharing</h2>
+    <p>
+      Personal data is not shared with unrelated third parties. Data may be shared with service providers required
+      to operate the app, such as Google Firebase or Google AdMob, or where legally required.
+    </p>
+  </section>
+
+  <section>
+    <h2>9. User Rights</h2>
+    <p>Depending on applicable law, users may have the right to:</p>
+    <ul>
+      <li>Access their personal data</li>
+      <li>Request correction of inaccurate data</li>
+      <li>Request deletion of personal data</li>
+      <li>Restrict or object to certain data processing activities</li>
+    </ul>
+    <p>
+      Requests may be submitted by email to
+      <a href="mailto:slin.bugbox@gmail.com">slin.bugbox@gmail.com</a>.
+    </p>
+  </section>
+
+  <section>
+    <h2>10. Minors</h2>
+    <p>
+      The app is intended exclusively for individuals aged 18 years or older.
+      Accounts identified as belonging to minors may be removed.
+    </p>
+  </section>
+
+  <section>
+    <h2>11. Changes to This Privacy Policy</h2>
+    <p>
+      This Privacy Policy may be updated from time to time to reflect changes to the app or legal requirements.
+      The current version is available on this page.
+    </p>
+  </section>
+
 </div>
 
-<section id="english">
-  <h2>Privacy Policy</h2>
-  <p>
-    This Privacy Policy explains how personal data is collected, processed and used within the Bugbox app.
-  </p>
+<div id="de" class="content hidden">
 
-  <div class="notice">
-    In case of discrepancies, inconsistencies or translation errors, the English version shall prevail and be legally binding.
-  </div>
-</section>
+  <section>
+    <p>
+      Diese Datenschutzerklärung informiert über die Erhebung, Verarbeitung und Nutzung personenbezogener Daten
+      innerhalb der App <strong>Bugbox</strong>.
+    </p>
 
-<section>
-  <h2>1. Data Controller</h2>
-  <p>
-    The data controller responsible for the processing of personal data is:<br><br>
-    <strong>Nils Illbruck</strong><br>
-    Operator of Bugbox<br>
-    Email: <a href="mailto:slin.bugbox@gmail.com">slin.bugbox@gmail.com</a>
-  </p>
+    <div class="notice">
+      Im Falle von Abweichungen, Unklarheiten oder Übersetzungsfehlern ist die englische Fassung maßgeblich und rechtlich bindend.
+    </div>
+  </section>
 
-  <p>
-    This Privacy Policy applies worldwide, including users located in the European Union, the United Kingdom,
-    the United States of America and Canada.
-  </p>
+  <section>
+    <h2>1. Verantwortliche Stelle</h2>
+    <p>
+      Verantwortlich für die Datenverarbeitung:<br><br>
+      <strong>Nils Illbruck</strong><br>
+      Betreiber von Bugbox<br>
+      E-Mail: <a href="mailto:slin.bugbox@gmail.com">slin.bugbox@gmail.com</a>
+    </p>
+    <p>
+      Diese Datenschutzerklärung gilt weltweit, einschließlich für Nutzer mit Wohnsitz in der Europäischen Union,
+      im Vereinigten Königreich, in den Vereinigten Staaten von Amerika sowie in Kanada.
+    </p>
+  </section>
 
-  <p>
-    Depending on applicable law, users may have additional rights under local data protection laws,
-    including but not limited to the GDPR, UK GDPR, CCPA/CPRA and PIPEDA.
-  </p>
-</section>
+  <section>
+    <h2>2. Welche Daten werden erhoben?</h2>
+    <p>Diese App kann folgende personenbezogene Daten erheben und speichern:</p>
+    <ul>
+      <li>E-Mail-Adresse</li>
+      <li>Benutzername</li>
+      <li>Profilbild, falls vom Nutzer hochgeladen</li>
+      <li>Vom Nutzer erstellte Anzeigen, Nachrichten und Profilinformationen</li>
+    </ul>
+    <p>
+      Zusätzlich können technische Informationen wie Geräteinformationen, Absturzberichte oder Nutzungsdaten
+      automatisch durch Dienste wie Google AdMob und Google Firebase erfasst werden.
+    </p>
+  </section>
 
-<section>
-  <h2>2. Data Collected</h2>
-  <p>The app may collect and store the following personal data:</p>
-  <ul>
-    <li>Email address</li>
-    <li>Username</li>
-    <li>Profile picture, if uploaded by the user</li>
-    <li>User-created listings, messages and profile information</li>
-  </ul>
+  <section>
+    <h2>3. Zweck der Datenverarbeitung</h2>
+    <ul>
+      <li>Verwaltung von Benutzerkonten, Registrierung und Login</li>
+      <li>Darstellung von Nutzerprofilen, Anzeigen und Inhalten</li>
+      <li>Bereitstellung von Chat-, Support- und technischen Diensten</li>
+      <li>Verbesserung der Stabilität, Sicherheit und Funktionalität der App</li>
+    </ul>
+    <p>
+      Es erfolgt kein Verkauf personenbezogener Daten, kein Versand von Newslettern und keine Nutzung der Daten
+      zu eigenen Werbezwecken.
+    </p>
+  </section>
 
-  <p>
-    In addition, technical information such as device information, crash reports or usage data may be
-    collected automatically by third-party services such as Google AdMob and Google Firebase.
-  </p>
-</section>
+  <section>
+    <h2>4. Werbung durch Google AdMob</h2>
+    <p>
+      Diese App verwendet Google AdMob zur Anzeige von Werbung. Abhängig von der Einwilligung des Nutzers
+      und den geltenden gesetzlichen Anforderungen kann personalisierte oder nicht-personalisierte Werbung
+      angezeigt werden.
+    </p>
+    <p>
+      Weitere Informationen:
+      <a href="https://policies.google.com/technologies/partner-sites" target="_blank">
+        https://policies.google.com/technologies/partner-sites
+      </a>
+    </p>
+  </section>
 
-<section>
-  <h2>3. Purpose of Processing</h2>
-  <ul>
-    <li>User registration, login and account management</li>
-    <li>Displaying user profiles, listings and user-generated content</li>
-    <li>Providing chat, support and technical services</li>
-    <li>Improving the stability, security and functionality of the app</li>
-  </ul>
+  <section>
+    <h2>5. Nutzung von Google Firebase</h2>
+    <p>
+      Diese App verwendet Google Firebase, einschließlich Authentication, Firestore, Firebase Storage und Crashlytics.
+      Dabei können technische Daten wie Fehlerberichte oder Gerätediagnosen verarbeitet werden.
+    </p>
+    <p>
+      Weitere Informationen:
+      <a href="https://firebase.google.com/support/privacy" target="_blank">
+        https://firebase.google.com/support/privacy
+      </a>
+    </p>
+  </section>
 
-  <p>
-    Bugbox does not sell personal data, does not send newsletters and does not use collected personal data
-    for its own advertising purposes.
-  </p>
-</section>
+  <section>
+    <h2>6. Marketplace-Funktion</h2>
+    <p>
+      Bugbox stellt ausschließlich eine technische Plattform bereit, über die Nutzer Anzeigen erstellen,
+      ansehen und miteinander kommunizieren können.
+    </p>
+    <p>
+      Bugbox ist nicht Verkäufer, Käufer, Vermittler oder Vertragspartner bei Transaktionen zwischen Nutzern.
+    </p>
+    <p>
+      Nutzer sind selbst dafür verantwortlich, dass ihre Anzeigen und Transaktionen mit allen geltenden Gesetzen,
+      insbesondere Arten-, Tier-, Import-, Export- und Zollvorschriften, vereinbar sind.
+    </p>
+  </section>
 
-<section>
-  <h2>4. Advertising with Google AdMob</h2>
-  <p>
-    This app uses Google AdMob to display advertisements. Depending on user consent and applicable legal
-    requirements, personalized or non-personalized ads may be shown.
-  </p>
+  <section>
+    <h2>7. Drittanbieter-Dienste</h2>
+    <p>
+      Die App verwendet Werbedienste von Drittanbietern, insbesondere Google AdMob.
+      Bugbox hat keinen Einfluss auf Inhalt, Gestaltung oder Zielseiten der angezeigten Werbeanzeigen.
+    </p>
+    <p>
+      Für Inhalte, Produkte oder Dienstleistungen, die über Werbeanzeigen oder externe Links von Drittanbietern
+      angeboten werden, übernimmt Bugbox keine Verantwortung oder Haftung.
+    </p>
+  </section>
 
-  <p>
-    Google may collect technical information such as device identifiers, IP address and usage data to provide
-    and improve advertising services.
-  </p>
+  <section>
+    <h2>8. Weitergabe von Daten</h2>
+    <p>
+      Eine Weitergabe personenbezogener Daten an unbeteiligte Dritte erfolgt nicht. Daten können an Dienstleister
+      weitergegeben werden, die für den Betrieb der App erforderlich sind, zum Beispiel Google Firebase oder
+      Google AdMob, oder wenn dies gesetzlich vorgeschrieben ist.
+    </p>
+  </section>
 
-  <p>
-    More information:
-    <a href="https://policies.google.com/technologies/partner-sites" target="_blank">
-      https://policies.google.com/technologies/partner-sites
-    </a>
-  </p>
-</section>
+  <section>
+    <h2>9. Rechte der Nutzer</h2>
+    <p>Je nach anwendbarem Recht können Nutzer insbesondere folgende Rechte haben:</p>
+    <ul>
+      <li>Auskunft über gespeicherte personenbezogene Daten</li>
+      <li>Berichtigung unrichtiger Daten</li>
+      <li>Löschung personenbezogener Daten</li>
+      <li>Einschränkung oder Widerspruch gegen bestimmte Datenverarbeitungen</li>
+    </ul>
+    <p>
+      Anfragen können per E-Mail an
+      <a href="mailto:slin.bugbox@gmail.com">slin.bugbox@gmail.com</a>
+      gesendet werden.
+    </p>
+  </section>
 
-<section>
-  <h2>5. Use of Google Firebase</h2>
-  <p>
-    This app uses Google Firebase services, including Authentication, Firestore, Firebase Storage and Crashlytics.
-    Technical data such as crash reports or device diagnostics may be collected to improve app stability and security.
-  </p>
+  <section>
+    <h2>10. Minderjährige</h2>
+    <p>
+      Die Nutzung der App ist ausschließlich Personen ab 18 Jahren gestattet.
+      Konten von Minderjährigen können entfernt werden.
+    </p>
+  </section>
 
-  <p>
-    More information:
-    <a href="https://firebase.google.com/support/privacy" target="_blank">
-      https://firebase.google.com/support/privacy
-    </a>
-  </p>
-</section>
+  <section>
+    <h2>11. Änderungen dieser Datenschutzerklärung</h2>
+    <p>
+      Diese Datenschutzerklärung kann bei Änderungen der App oder rechtlicher Vorgaben angepasst werden.
+      Die aktuelle Version ist jederzeit auf dieser Seite verfügbar.
+    </p>
+  </section>
 
-<section>
-  <h2>6. Marketplace Function</h2>
-  <p>
-    Bugbox provides only a technical platform that allows users to create listings, view offers and communicate
-    with each other.
-  </p>
-
-  <p>
-    Bugbox is not a seller, buyer, broker, agent or contractual party in transactions between users.
-  </p>
-
-  <p>
-    Users are solely responsible for ensuring that their listings and transactions comply with all applicable
-    laws, including wildlife protection, animal welfare, import, export and customs regulations.
-  </p>
-</section>
-
-<section>
-  <h2>7. Third-Party Advertising and Services</h2>
-  <p>
-    The app uses third-party advertising services, in particular Google AdMob, to display advertising content.
-  </p>
-
-  <p>
-    Bugbox has no control over the content, design or destination pages of third-party advertisements.
-  </p>
-
-  <p>
-    Bugbox assumes no responsibility or liability for content, products or services offered through advertisements
-    or external links provided by third parties.
-  </p>
-</section>
-
-<section>
-  <h2>8. Data Sharing</h2>
-  <p>
-    Personal data is not shared with unrelated third parties. Data may be shared with service providers required
-    to operate the app, such as Google Firebase or Google AdMob, or where legally required.
-  </p>
-</section>
-
-<section>
-  <h2>9. User Rights</h2>
-  <p>Depending on applicable law, users may have the right to:</p>
-  <ul>
-    <li>Access their personal data</li>
-    <li>Request correction of inaccurate data</li>
-    <li>Request deletion of personal data</li>
-    <li>Restrict or object to certain data processing activities</li>
-  </ul>
-
-  <p>
-    Requests may be submitted by email to
-    <a href="mailto:slin.bugbox@gmail.com">slin.bugbox@gmail.com</a>.
-  </p>
-</section>
-
-<section>
-  <h2>10. Minors</h2>
-  <p>
-    The app is intended exclusively for individuals aged 18 years or older.
-    Accounts identified as belonging to minors may be removed.
-  </p>
-</section>
-
-<section>
-  <h2>11. Changes to This Privacy Policy</h2>
-  <p>
-    This Privacy Policy may be updated from time to time to reflect changes to the app or legal requirements.
-    The current version is available on this page.
-  </p>
-</section>
-
-<hr>
-
-<section id="deutsch">
-  <h2>Datenschutzerklärung</h2>
-  <p>
-    Diese Datenschutzerklärung informiert über die Erhebung, Verarbeitung und Nutzung personenbezogener Daten
-    innerhalb der App Bugbox.
-  </p>
-</section>
-
-<section>
-  <h2>1. Verantwortliche Stelle</h2>
-  <p>
-    Verantwortlich für die Datenverarbeitung:<br><br>
-    <strong>Nils Illbruck</strong><br>
-    Betreiber von Bugbox<br>
-    E-Mail: <a href="mailto:slin.bugbox@gmail.com">slin.bugbox@gmail.com</a>
-  </p>
-
-  <p>
-    Diese Datenschutzerklärung gilt weltweit, einschließlich für Nutzer mit Wohnsitz in der Europäischen Union,
-    im Vereinigten Königreich, in den Vereinigten Staaten von Amerika sowie in Kanada.
-  </p>
-</section>
-
-<section>
-  <h2>2. Welche Daten werden erhoben?</h2>
-  <ul>
-    <li>E-Mail-Adresse</li>
-    <li>Benutzername</li>
-    <li>Profilbild, falls vom Nutzer hochgeladen</li>
-    <li>Vom Nutzer erstellte Anzeigen, Nachrichten und Profilinformationen</li>
-  </ul>
-
-  <p>
-    Zusätzlich können technische Informationen wie Geräteinformationen, Absturzberichte oder Nutzungsdaten
-    automatisch durch Dienste wie Google AdMob und Google Firebase erfasst werden.
-  </p>
-</section>
-
-<section>
-  <h2>3. Zweck der Datenverarbeitung</h2>
-  <ul>
-    <li>Verwaltung von Benutzerkonten, Registrierung und Login</li>
-    <li>Darstellung von Nutzerprofilen, Anzeigen und Inhalten</li>
-    <li>Bereitstellung von Chat-, Support- und technischen Diensten</li>
-    <li>Verbesserung der Stabilität, Sicherheit und Funktionalität der App</li>
-  </ul>
-
-  <p>
-    Es erfolgt kein Verkauf personenbezogener Daten, kein Versand von Newslettern und keine Nutzung der Daten
-    zu eigenen Werbezwecken.
-  </p>
-</section>
-
-<section>
-  <h2>4. Google AdMob</h2>
-  <p>
-    Diese App verwendet Google AdMob zur Anzeige von Werbung. Abhängig von der Einwilligung des Nutzers
-    und den geltenden gesetzlichen Anforderungen kann personalisierte oder nicht-personalisierte Werbung
-    angezeigt werden.
-  </p>
-</section>
-
-<section>
-  <h2>5. Google Firebase</h2>
-  <p>
-    Diese App verwendet Google Firebase, einschließlich Authentication, Firestore, Firebase Storage und Crashlytics.
-    Dabei können technische Daten wie Fehlerberichte oder Gerätediagnosen verarbeitet werden.
-  </p>
-</section>
-
-<section>
-  <h2>6. Marketplace-Funktion</h2>
-  <p>
-    Bugbox stellt ausschließlich eine technische Plattform bereit. Bugbox ist nicht Verkäufer, Käufer,
-    Vermittler oder Vertragspartner bei Transaktionen zwischen Nutzern.
-  </p>
-
-  <p>
-    Nutzer sind selbst dafür verantwortlich, dass ihre Anzeigen und Transaktionen mit allen geltenden Gesetzen,
-    insbesondere Arten-, Tier-, Import-, Export- und Zollvorschriften, vereinbar sind.
-  </p>
-</section>
-
-<section>
-  <h2>7. Weitergabe von Daten</h2>
-  <p>
-    Eine Weitergabe personenbezogener Daten an unbeteiligte Dritte erfolgt nicht. Daten können an Dienstleister
-    weitergegeben werden, die für den Betrieb der App erforderlich sind, zum Beispiel Google Firebase oder
-    Google AdMob, oder wenn dies gesetzlich vorgeschrieben ist.
-  </p>
-</section>
-
-<section>
-  <h2>8. Rechte der Nutzer</h2>
-  <ul>
-    <li>Auskunft über gespeicherte personenbezogene Daten</li>
-    <li>Berichtigung unrichtiger Daten</li>
-    <li>Löschung personenbezogener Daten</li>
-    <li>Einschränkung oder Widerspruch gegen bestimmte Datenverarbeitungen</li>
-  </ul>
-
-  <p>
-    Anfragen können per E-Mail an
-    <a href="mailto:slin.bugbox@gmail.com">slin.bugbox@gmail.com</a>
-    gesendet werden.
-  </p>
-</section>
-
-<section>
-  <h2>9. Minderjährige</h2>
-  <p>
-    Die Nutzung der App ist ausschließlich Personen ab 18 Jahren gestattet.
-  </p>
-</section>
-
-<section>
-  <h2>10. Änderungen</h2>
-  <p>
-    Diese Datenschutzerklärung kann bei Änderungen der App oder rechtlicher Vorgaben angepasst werden.
-    Die aktuelle Version ist jederzeit auf dieser Seite verfügbar.
-  </p>
-</section>
+</div>
 
 </main>
 
 <footer>
   <p>&copy; 2025 Nils Illbruck. All rights reserved.</p>
 </footer>
+
+<script>
+  function showLanguage(lang) {
+    const en = document.getElementById("en");
+    const de = document.getElementById("de");
+    const title = document.getElementById("pageTitle");
+    const btnEn = document.getElementById("btnEn");
+    const btnDe = document.getElementById("btnDe");
+
+    if (lang === "de") {
+      en.classList.add("hidden");
+      de.classList.remove("hidden");
+      title.textContent = "Datenschutzerklärung";
+      btnEn.classList.remove("active");
+      btnDe.classList.add("active");
+      document.documentElement.lang = "de";
+    } else {
+      de.classList.add("hidden");
+      en.classList.remove("hidden");
+      title.textContent = "Privacy Policy";
+      btnDe.classList.remove("active");
+      btnEn.classList.add("active");
+      document.documentElement.lang = "en";
+    }
+
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  }
+</script>
 
 </body>
 </html>
